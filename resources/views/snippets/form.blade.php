@@ -1,0 +1,6 @@
+@php($p = $prefix ?? '')
+<div class="form-group"><label>Title</label><input id="{{ $p }}title" name="title" class="form-control" placeholder="e.g., MySQL PDO Connection" required maxlength="120"></div>
+<div class="form-group"><label>Category / Language</label><select id="{{ $p }}language" name="language" class="form-control" required>@foreach(['html','css','javascript','php','sql','python','java','text'] as $language)<option value="{{ $language }}">{{ strtoupper($language) }}</option>@endforeach</select></div>
+<div class="form-group"><label>Short Description</label><input id="{{ $p }}description" name="description" class="form-control" placeholder="Brief description of what this code does" maxlength="500"></div>
+<div class="form-group"><label>Code Snippet</label><textarea id="{{ $p }}code" name="code" class="form-control" placeholder="Paste your code snippet here..." required></textarea></div>
+<div class="share-option"><input type="hidden" name="is_public" value="0"><input id="{{ $p }}public" type="checkbox" name="is_public" value="1"><label for="{{ $p }}public"><i class="fa-solid fa-earth-americas"></i><span><strong>Share with the community</strong><small>Any visitor can view and copy this snippet.</small></span></label></div>
